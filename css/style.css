@@ -1,0 +1,48 @@
+﻿/*=======css reset=======*/
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}
+input,textarea,select{*font-size:100%}
+legend{color:#000}
+li{list-style: none;}
+.clear{clear: both;display: none;}
+body{cursor: default;background: url(../img/login/body-bg.jpg) #1b3188 0 0 no-repeat;background-size:cover;}
+
+/* head */
+#head{border-bottom: 10px solid #3564a9;height: 105px;background: #FFF;}
+#logo{float: left;margin-left: 30px;height: 92px;line-height: 92px;}
+#head .text{font-size: 38px;height: 92px;line-height: 92px;float: left;color: #3564a9;margin-left: 30px}
+
+/* main */
+#main .box{width: 960px;margin:0 auto;height: 430px;display: block;position:absolute;    left:50%;    top:50%;    margin-left:-500px;    margin-top:-195px; }
+#main .box .login{float: right;background: #FFF;width: 342px;height: 411px;border:5px solid #7a97c7;border-radius: 3px;margin-top: 15px;}
+#main .box .login h1{font-size: 22px;color: #3463a9;text-align: center;margin:45px 0 25px 0;}
+/* form */
+.loginForm{position:relative;padding-top:40px;}
+.loginFormIpt{position:relative;width:275px;height:40px;line-height:40px;margin:0 0 15px 30px;padding-right:5px;clear:both;background-position:0 -352px;z-index:2;border: 1px solid #b5b5b5;}
+.loginFormIpt .ico{position:absolute;left:9px;top:8px;z-index:1;}
+.loginFormIpt .captcha{position:absolute;right:0px;top:0px;z-index:1;}
+.forgetPwdLine{text-align: right;}
+.forgetPwd{font-size: 16px;color: #1a9c23}
+.loginFormBtn{position:relative;width:280px;height:44px;margin:18px 0 0 30px}
+.loginFormBtn .btn-login, .loginFormBtn .btn-reg{border:0px;width: 280px;height: 44px;color: #FFF;font-size: 18px;float: center;text-align: center;line-height: 44px;font-family: "微软雅黑";padding: 0px;}
+.loginFormBtn .btn-login{background: #367abf;cursor: pointer;}
+.loginFormBtn .btn-reg{background: #1a9c23;display: inline-block;float: right;}
+.formIpt{position: absolute;width:205px;ime-mode:disabled;height:21px;top:7px;left:40px;font-size:16px;border:none;font-family:verdana;line-height:21px;background:transparent!important;}
+.formIpt:focus{outline:0;}
+.loginFormCheck{height:14px;line-height:14px;color:#555;margin-left:30px;clear:both;width:275px;position:relative;z-index:1;padding: 10px 0;}
+.loginFormCheckInner{line-height:13px;width:150px;float:left;position: relative;font-size: 16px;color: #777}
+.w130{width: 130px;}
+/* ico */
+.ico-uid{width:24px;height:24px;background: url(../img/login/ico-uid.gif) no-repeat;}
+.ico-pwd{width:24px;height:26px;background: url(../img/login/ico-pwd.gif) no-repeat;}
+.ico-yzm{width:24px;height:26px;background: url(../img/login/ico-yzm.gif) no-repeat;}
+/* foot */
+#foot{width:100%;background: #FFF;height: 35px;line-height: 35px;text-align: center;position: fixed;bottom: 0px;}
+#foot p{font-size: 16px;color: #999;}

@@ -1,0 +1,1907 @@
+body {
+    margin: 0;
+    background-color: #222222;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    font-family: Microsoft YaHei;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.accordion {
+    width: 100%;
+    max-width: 360px;
+    background: #ECECEC;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.accordion .link {
+    cursor: pointer;
+    display: block;
+    padding: 15px 15px 15px 42px;
+    color: #4D4D4D;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid #CCC;
+    position: relative;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.accordion li:last-child .link {
+    border-bottom: 0;
+}
+
+.accordion li i {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    font-size: 18px;
+    color: #595959;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.accordion li i.fa-chevron-down {
+    right: 12px;
+    left: auto;
+    font-size: 16px;
+}
+
+.accordion li.open .link {
+    color: #b63b4d;
+}
+
+.accordion li.open i {
+    color: #b63b4d;
+}
+
+.accordion li.open i.fa-chevron-down {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+
+/**
+ * Submenu
+ -----------------------------*/
+
+.submenu {
+    display: none;
+    background: #F4F4F4;
+    font-size: 14px;
+    cursor: pointer;
+    /*margin: 5px;*/
+}
+
+.submenu1 {
+    display: block;
+    background: #F4F4F4;
+    font-size: 14px;
+}
+
+.submenu li {
+    border-bottom: 1px solid #CCC;
+    padding: 10px 0 10px 0;
+}
+
+.submenu ul {
+    border-bottom: 1px solid #CCC;
+    padding: 10px 0 10px 0;
+}
+
+.submenu a {
+    display: block;
+    text-decoration: none;
+    color: #d9d9d9;
+    padding-top: 5px;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+.submenu a:hover {
+    background: #b63b4d;
+    color: #FFF;
+}
+
+.Root {
+    position: absolute;
+    width: 1366px;
+    height: 768px;
+    padding: 10px 17px 7px 17px;
+}
+
+.RootBlur {
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    filter: blur(20px);
+}
+
+.RootContainer {
+    position: absolute;
+    width: 1366px;
+    height: 768px;
+    left: 17px;
+    top: 10px;
+}
+
+
+/* Control Panel */
+
+.ControlPanel {
+    position: absolute;
+    width: 150px;
+    height: 42px;
+    left: 0px;
+    top: 0px;
+    background-color: #3E3E3E;
+    box-shadow: 0px 0px 7px #FFFFFF;
+    border-radius: 5px;
+}
+
+.LoadFile,
+.SaveFile,
+.ExportFile,
+.PlayMode,
+.EditMode {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 5px;
+    border-radius: 3px;
+}
+
+.LoadFile {
+    left: 5px;
+}
+
+.SaveFile {
+    left: 41px;
+}
+
+.ExportFile {
+    left: 77px;
+}
+
+.PlayMode {
+    left: 113px;
+}
+
+.EditMode {
+    left: 113px;
+    display: none;
+}
+
+.LoadFile:hover,
+.SaveFile:hover,
+.ExportFile:hover,
+.PlayMode:hover,
+.EditMode:hover {
+    background-color: RGBA(255, 255, 255, 0.5);
+}
+
+.ControlPanelButtonImg {
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+}
+
+
+/* State Panel */
+
+.StatePanel {
+    position: absolute;
+    width: 1086px;
+    height: 42px;
+    left: 160px;
+    top: 0px;
+    background-color: #3E3E3E;
+    box-shadow: 0px 0px 7px #FFFFFF;
+    border-radius: 5px;
+}
+
+.SystemStateContainer {
+    position: absolute;
+    width: 150px;
+    height: 28px;
+    left: 5px;
+    top: 7px;
+    background-color: #52A852;
+    border-radius: 5px;
+    cursor: default;
+}
+
+.SystemStateLeft,
+.SystemStateRight {
+    position: absolute;
+    height: 28px;
+    top: 0px;
+    line-height: 28px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.SystemStateLeft {
+    width: 74px;
+    left: 0px;
+    border-right: 1px solid #AAAAAA;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.SystemStateRight {
+    width: 75px;
+    left: 75px;
+    color: #FF9944;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.DetailContainer {
+    position: absolute;
+    width: 926px;
+    height: 42px;
+    left: 160px;
+    top: 0px;
+    background-color: #756353;
+    border-radius: 5px;
+    cursor: default;
+}
+
+.DetailLeft,
+.DetailRight {
+    position: absolute;
+    height: 42px;
+    top: 0px;
+}
+
+.DetailLeft {
+    width: 79px;
+    left: 0px;
+    border-right: 1px solid #AAAAAA;
+    line-height: 42px;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.DetailRight {
+    width: 800px;
+    left: 80px;
+}
+
+.DetailEleContainer {
+    position: absolute;
+    width: 160px;
+    height: 18px;
+    background-color: #553340;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.DetailEleLeft {
+    position: absolute;
+    width: 49px;
+    height: 18px;
+    left: 0px;
+    top: 0px;
+    border-right: 1px solid #AAAAAA;
+    line-height: 18px;
+    font-size: 12px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.DetailEleRight {
+    position: absolute;
+    width: 110px;
+    height: 18px;
+    left: 50px;
+    top: 0px;
+    line-height: 18px;
+    font-size: 12px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.DetailEleGrey {
+    background-color: #939393;
+}
+
+.DetailEnableChoose {}
+
+.DetailEnableChoose:hover {
+    background-color: RGBA(255, 255, 255, 0.5);
+}
+
+.DetailInterfaceList {
+    position: absolute;
+    width: 49px;
+    left: 335px;
+    top: 20px;
+    background-color: #553340;
+    border-radius: 3px;
+    display: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.DetailInterfaceLi {
+    width: 49px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.DetailInterfaceLi:hover {
+    background-color: RGBA(255, 255, 255, 0.5);
+}
+
+
+/* Template Panel */
+
+.TemplatePanel {
+    position: absolute;
+    width: 150px;
+    height: 550px;
+    left: 0px;
+    top: 50px;
+    background-color: #3E3E3E;
+    box-shadow: 0px 0px 7px #FFFFFF;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.TemplateControl {
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    background-color: #333333;
+    border-radius: 3px;
+}
+
+.TCButton {
+    font-size: 12px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 3px;
+    cursor: default;
+}
+
+.TCAllOff {
+    position: absolute;
+    width: 60px;
+    height: 22px;
+    left: 7px;
+    top: 4px;
+    background-color: #FC5100;
+}
+
+.TCAllOn {
+    position: absolute;
+    width: 60px;
+    height: 22px;
+    left: 70px;
+    top: 4px;
+    background-color: #528652;
+}
+
+.TCAllOff:hover {
+    background-color: #FC5100;
+}
+
+.TCAllOn:hover {
+    background-color: #52B952;
+}
+
+.TCSliderBottom {
+    position: absolute;
+    width: 4px;
+    height: 32px;
+    left: 80px;
+    top: 9px;
+    background-color: #AAAAAA;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.TCSliderTop {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 76px;
+    top: 9px;
+    background-color: #FEA102;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.TCSliderText {
+    position: absolute;
+    width: 55px;
+    height: 22px;
+    left: 88px;
+    font-size: 12px;
+    line-height: 22px;
+    color: #DFDFDF;
+    text-align: center;
+    border-radius: 3px;
+    cursor: default;
+}
+
+.TCSliderChosen {
+    background-color: #FEA102;
+    color: #FFFFFF;
+    pointer-events: none;
+}
+
+.TCSliderNChosen {}
+
+.TCSliderNChosen:hover {
+    background-color: RGBA(255, 255, 255, 0.9);
+    color: #000000;
+}
+
+.TCSliderAuto {
+    top: 2px;
+}
+
+.TCSliderHand {
+    top: 26px;
+}
+
+.TemplatePanelFirstUL {
+    position: absolute;
+    width: 150px;
+    top: 30px;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.TemplatePanelFirstUL>li {
+    position: relative;
+    width: 150px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.TemplatePanelFirstUL>li>div {
+    width: 150px;
+    height: 36px;
+    text-align: center;
+    color: #FFFFFF;
+    line-height: 36px;
+    font-size: 16px;
+    background-color: #756353;
+    border-radius: 3px;
+    cursor: default;
+}
+
+.TemplatePanelFirstUL>li>div:hover {
+    background-color: #898989;
+}
+
+.TemplatePanelSecondUL {
+    position: relative;
+    width: 150px;
+    height: 0px;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.TemplatePanelSecondUL>li {
+    position: relative;
+    width: 150px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.TemplatePanelSecondUL>li>div {
+    position: relative;
+    width: 150px;
+    border-radius: 3px;
+}
+
+.TemplatePanelSecondUL>li>div:hover {
+    background-color: RGBA(0, 0, 0, 0.5);
+}
+
+.TemplatePanelSecondUL>li>div img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    pointer-events: none;
+}
+
+.TemplatePanelSecondUL>li>div span {
+    position: absolute;
+    width: 100px;
+    height: 12px;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    text-align: center;
+    color: #DDDDDD;
+    line-height: 12px;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.CalTankTabUL div {
+    height: 90px;
+}
+
+.CalTankTabUL img {
+    width: 49px;
+    height: 72px;
+    margin-left: -25px;
+    margin-top: -45px;
+}
+
+.CalTankTabUL span {
+    margin-top: 30px;
+}
+
+.StoTankTabUL div {
+    height: 132px;
+}
+
+.StoTankTabUL img {
+    width: 72px;
+    height: 114px;
+    margin-left: -36px;
+    margin-top: -68px;
+}
+
+.StoTankTabUL span {
+    margin-top: 48px;
+}
+
+.ConvertTabUL div {
+    height: 24px;
+}
+
+
+/* Workbench Panel */
+
+.WorkbenchPanel {
+    position: absolute;
+    width: 1366px;
+    height: 768px;
+    left: 160px;
+    top: 50px;
+    background: #323232;
+    box-shadow: 0px 0px 7px #FFFFFF;
+    overflow: hidden;
+}
+
+.WorkbenchExpand {
+    position: absolute;
+    background-color: RGBA(82, 134, 82, 0.8);
+    font-size: 28px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: default;
+    opacity: 0;
+}
+
+.WorkbenchExpand:hover {
+    opacity: 1;
+}
+
+.WorkbenchExpandUp {
+    width: 535px;
+    height: 26px;
+    top: 2px;
+    line-height: 26px;
+}
+
+.WorkbenchExpandDown {
+    width: 535px;
+    height: 26px;
+    top: 522px;
+    line-height: 26px;
+}
+
+.WorkbenchExpandLeft {
+    width: 26px;
+    height: 275px;
+    left: 2px;
+    line-height: 275px;
+}
+
+.WorkbenchExpandRight {
+    width: 26px;
+    height: 275px;
+    left: 1042px;
+    line-height: 275px;
+}
+
+.WorkbenchShrink {
+    position: absolute;
+    background-color: RGBA(202, 81, 0, 0.8);
+    font-size: 28px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: default;
+    opacity: 0;
+}
+
+.WorkbenchShrink:hover {
+    opacity: 1;
+}
+
+.WorkbenchShrinkUp {
+    width: 535px;
+    height: 26px;
+    left: 535px;
+    top: 2px;
+    line-height: 26px;
+}
+
+.WorkbenchShrinkDown {
+    width: 535px;
+    height: 26px;
+    left: 535px;
+    top: 522px;
+    line-height: 26px;
+}
+
+.WorkbenchShrinkLeft {
+    width: 26px;
+    height: 275px;
+    left: 2px;
+    top: 275px;
+    line-height: 275px;
+}
+
+.WorkbenchShrinkRight {
+    width: 26px;
+    height: 275px;
+    left: 1042px;
+    top: 275px;
+    line-height: 275px;
+}
+
+.WorkbenchCorner {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/workbenchcorner.png");
+}
+
+.WorkbenchEdge {
+    position: absolute;
+    background-color: #002145;
+}
+
+.Workbench {
+    position: absolute;
+    width: 1366px;
+    height: 768px;
+    left: 0px;
+    top: 0px;
+}
+
+
+/* RButton Menu */
+
+.RButtonMenu {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #FFFFFF;
+    border-radius: 7px;
+    box-shadow: 0px 0px 7px #AAAAAA;
+    overflow: hidden;
+    display: none;
+    cursor: default;
+}
+
+.RButtonMenu>img {
+    position: absolute;
+    pointer-events: none;
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    filter: blur(20px);
+}
+
+.RButtonMenuOption {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    left: 0px;
+    border-bottom: 1px solid #CCCCCC;
+    line-height: 30px;
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+}
+
+.RButtonMenuOption:hover {
+    background-color: #555555;
+    color: #FFFFFF;
+}
+
+.RButtonMenuOptionOff {
+    color: #777777;
+    pointer-events: none;
+}
+
+.RButtonMenuOption1 {
+    top: 0px;
+}
+
+.RButtonMenuOption2 {
+    top: 30px;
+}
+
+.RButtonMenuOption3 {
+    top: 60px;
+}
+
+.RButtonMenuOption4 {
+    top: 90px;
+}
+
+.RButtonMenuOption5 {
+    top: 120px;
+}
+
+.WorkbenchStatePanel {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 15px;
+    top: 15px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.WorkbenchStateTab {
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+.WorkbenchWidth {}
+
+.WorkbenchHeight {
+    top: 20px;
+}
+
+.PipeSpeed {
+    top: 40px;
+}
+
+.CEAutoToolLogo {
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    right: 5px;
+    bottom: 5px;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    color: #FFFFFF;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 10000;
+}
+
+
+/* Object Normal */
+
+.WorkbenchSodaTank {
+    position: absolute;
+    width: 49px;
+    height: 72px;
+    background-image: url(../images/sodatank.png);
+}
+
+.WorkbenchGaugeTank {
+    position: absolute;
+    width: 49px;
+    height: 72px;
+    background-image: url(../images/gaugetank.png);
+}
+
+.WorkbenchAcidTank {
+    position: absolute;
+    width: 49px;
+    height: 72px;
+    background-image: url(../images/acidtank.png);
+}
+
+.WorkbenchSodaStoTank {
+    position: absolute;
+    width: 92px;
+    height: 114px;
+    background-image: url(../images/sodastotank.png);
+}
+
+.WorkbenchWaterStoTank {
+    position: absolute;
+    width: 92px;
+    height: 114px;
+    background-image: url(../images/waterstotank.png);
+}
+
+.WorkbenchDanTi {
+    position: absolute;
+    width: 92px;
+    height: 114px;
+    background-image: url(../images/danti.png);
+}
+
+.WorkbenchAcidStoTank {
+    position: absolute;
+    width: 92px;
+    height: 114px;
+    background-image: url(../images/acidstotank.png);
+}
+
+.WorkbenchJar {
+    position: absolute;
+    width: 92px;
+    height: 114px;
+    background-image: url(../images/jar.png);
+}
+
+.WorkbenchReactor {
+    position: absolute;
+    width: 92px;
+    height: 100px;
+    background-image: url(../images/reactor.png);
+}
+
+.WorkbenchFuPeiTank {
+    position: absolute;
+    width: 92px;
+    height: 100px;
+    background-image: url(../images/fupeitank.png);
+}
+
+.WorkbenchMixTank {
+    position: absolute;
+    width: 92px;
+    height: 100px;
+    background-image: url(../images/mixtank.png);
+}
+
+.WorkbenchHandValve2 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-image: url(../images/handvalve2.png);
+}
+
+.WorkbenchHandValve1 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-image: url(../images/handvalve1.png);
+}
+
+.WorkbenchDropValve {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/dropvalve.png);
+}
+
+.WorkbenchSwitchValve {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/switchvalve.png);
+}
+
+.WorkbenchConvert11 {
+    position: absolute;
+    width: 17px;
+    height: 11px;
+    background-image: url(../images/convert11.png);
+}
+
+.WorkbenchConvert12 {
+    position: absolute;
+    width: 11px;
+    height: 17px;
+    background-image: url(../images/convert12.png);
+}
+
+.WorkbenchConvert13 {
+    position: absolute;
+    width: 17px;
+    height: 11px;
+    background-image: url(../images/convert13.png);
+}
+
+.WorkbenchConvert14 {
+    position: absolute;
+    width: 11px;
+    height: 17px;
+    background-image: url(../images/convert14.png);
+}
+
+.WorkbenchConvert21 {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background-image: url(../images/convert21.png);
+}
+
+.WorkbenchConvert22 {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background-image: url(../images/convert22.png);
+}
+
+.WorkbenchConvert23 {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background-image: url(../images/convert23.png);
+}
+
+.WorkbenchConvert24 {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background-image: url(../images/convert24.png);
+}
+
+.WorkbenchLine11 {
+    position: absolute;
+    width: 45px;
+    height: 4px;
+    background-image: url(../images/line11.png);
+}
+
+.WorkbenchLine12 {
+    position: absolute;
+    width: 4px;
+    height: 45px;
+    background-image: url(../images/line12.png);
+}
+
+.WorkbenchPump {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background-image: url(../images/pump.png);
+}
+
+.WorkbenchElect {
+    position: absolute;
+    width: 63px;
+    height: 100px;
+    background-image: url(../images/elect.png);
+}
+
+.Workbenchtem_sensor {
+    position: absolute;
+    width: 49px;
+    height: 27px;
+    background-image: url(../images/tem_sensor.png);
+}
+
+.Workbenchgravity_sensor {
+    position: absolute;
+    width: 49px;
+    height: 27px;
+    background-image: url(../images/gravity_sensor.png);
+}
+
+.Workbenchph_sensor {
+    position: absolute;
+    width: 49px;
+    height: 27px;
+    background-image: url(../images/ph_sensor.png);
+}
+
+.Workbenchele_sensor {
+    position: absolute;
+    width: 49px;
+    height: 27px;
+    background-image: url(../images/ele_sensor.png);
+}
+
+.Workbenchalarm {
+    position: absolute;
+    width: 35px;
+    height: 139px;
+    background-image: url(../images/alarm.png);
+}
+
+
+/* Object Chosen */
+
+.WorkbenchSodaTankC {
+    background-image: url(../images/sodatank_c.png);
+}
+
+.WorkbenchGaugeTankC {
+    background-image: url(../images/gaugetank_c.png);
+}
+
+.WorkbenchAcidTankC {
+    background-image: url(../images/acidtank_c.png);
+}
+
+.WorkbenchSodaStoTankC {
+    background-image: url(../images/sodastotank_c.png);
+}
+
+.WorkbenchWaterStoTankC {
+    background-image: url(../images/waterstotank_c.png);
+}
+
+.WorkbenchDanTiC {
+    background-image: url(../images/danti_c.png);
+}
+
+.WorkbenchAcidStoTankC {
+    background-image: url(../images/acidstotank_c.png);
+}
+
+.WorkbenchJarC {
+    background-image: url(../images/jar_c.png);
+}
+
+.WorkbenchReactorC {
+    background-image: url(../images/reactor_c.png);
+}
+
+.WorkbenchFuPeiTankC {
+    background-image: url(../images/fupeitank_c.png);
+}
+
+.WorkbenchMixTankC {
+    background-image: url(../images/mixtank_c.png);
+}
+
+.WorkbenchHandValve2C {
+    background-image: url(../images/handvalve2_c.png);
+}
+
+.WorkbenchHandValve1C {
+    background-image: url(../images/handvalve1_c.png);
+}
+
+.WorkbenchDropValveC {
+    background-image: url(../images/dropvalve_c.png);
+}
+
+.WorkbenchSwitchValveC {
+    background-image: url(../images/switchvalve_c.png);
+}
+
+.WorkbenchConvert11C {
+    background-image: url(../images/convert11_c.png);
+}
+
+.WorkbenchConvert12C {
+    background-image: url(../images/convert12_c.png);
+}
+
+.WorkbenchConvert13C {
+    background-image: url(../images/convert13_c.png);
+}
+
+.WorkbenchConvert14C {
+    background-image: url(../images/convert14_c.png);
+}
+
+.WorkbenchConvert21C {
+    background-image: url(../images/convert21_c.png);
+}
+
+.WorkbenchConvert22C {
+    background-image: url(../images/convert22_c.png);
+}
+
+.WorkbenchConvert23C {
+    background-image: url(../images/convert23_c.png);
+}
+
+.WorkbenchConvert24C {
+    background-image: url(../images/convert24_c.png);
+}
+
+.WorkbenchLine11C {
+    background-image: url(../images/line11_c.png);
+}
+
+.WorkbenchLine12C {
+    background-image: url(../images/line12_c.png);
+}
+
+.WorkbenchPumpC {
+    background-image: url(../images/pump_c.png);
+}
+
+.WorkbenchElectC {
+    background-image: url(../images/elect_c.png);
+}
+
+.Workbenchtem_sensorC {
+    background-image: url(../images/tem_sensor_c.png);
+}
+
+.Workbenchgravity_sensorC {
+    background-image: url(../images/gravity_sensor_c.png);
+}
+
+.Workbenchph_sensorC {
+    background-image: url(../images/ph_sensor_c.png);
+}
+
+.Workbenchele_sensorC {
+    background-image: url(../images/ele_sensor_c.png);
+}
+
+.WorkbenchalarmC {
+    background-image: url(../images/alarm_c.png);
+}
+
+
+/* Page Foot */
+
+.PageFoot {
+    position: absolute;
+    width: 1200px;
+    height: 16px;
+    left: 50%;
+    top: 617px;
+    margin-left: -600px;
+    text-align: center;
+    color: #FFFFFF;
+    line-height: 16px;
+    font-size: 12px;
+}
+
+.PageFoot a {
+    text-decoration: none;
+    color: #1E90FF;
+}
+
+.PopRoot {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 9998;
+    display: none;
+}
+
+.PopPosition {
+    position: absolute;
+    width: 420px;
+    height: 140px;
+    left: 50%;
+    top: 50%;
+    margin: 0px 0px 0px -210px;
+}
+
+.PopMenuContainer {
+    position: absolute;
+    width: 400px;
+    /* 400px */
+    height: 120px;
+    /* 120px */
+    left: 50%;
+    top: 50%;
+    margin: 0px 0px 0px -200px;
+    /* -60px 0px 0px -200px */
+    background-color: RGBA(255, 255, 255, 1.0);
+    box-shadow: 0px 0px 7px #FFFFFF;
+    border-radius: 5px;
+    color: #FFFFFF;
+    overflow: hidden;
+}
+
+.PopMenuContainer1 {
+    position: absolute;
+    width: 400px;
+    /* 400px */
+    left: 50%;
+    top:30%;
+    margin: 0px 0px 0px -200px;
+    /* -60px 0px 0px -200px */
+    background-color: RGBA(255, 255, 255, 0);
+    overflow: hidden;
+}
+
+.PopSaveFile {
+    position: absolute;
+    width: 400px;
+    height: 270px;
+    left: 50%;
+    top: 33%;
+    margin: -60px 0px 0px -200px;
+    display: none;
+    border-radius: 5px;
+    background-color: RGBA(255, 255, 255, 1.0);
+    box-shadow: 0px 0px 7px #FFFFFF;
+}
+
+.PopSaveFilesensor {
+    position: absolute;
+    width: 400px;
+    height: 455px;
+    left: 50%;
+    top: 23%;
+    margin: -100px 0px 0px -200px;
+    display: none;
+    border-radius: 5px;
+    background-color: RGBA(255, 255, 255, 1.0);
+    box-shadow: 0px 0px 7px #FFFFFF;
+}
+.PopSaveFileno {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 50%;
+    margin:0px 0px 0px -200px;
+    display: none;
+    border-radius: 5px;
+    background-color: RGBA(255, 255, 255, 1.0);
+    box-shadow: 0px 0px 7px #FFFFFF;
+}
+
+.PopSaveFilefood {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    left: 50%;
+    top: 33%;
+    margin: -100px 0px 0px -200px;
+    display: none;
+    border-radius: 5px;
+    background-color: RGBA(255, 255, 255, 1.0);
+    box-shadow: 0px 0px 7px #FFFFFF;
+}
+
+.PopSaveFileInput {
+    position: absolute;
+    width: 240px;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    margin: -40px 0px 0px -125px;
+    padding: 0px 5px 0px 5px;
+    background-color: #564545;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.PopSaveFile2 {
+    margin: 10px;
+}
+
+.lable2 {
+    font-size: 14px;
+    color: #214590;
+}
+
+.PopSaveFileInput:focus {
+    box-shadow: 0px 0px 7px #000000;
+}
+
+.PopSaveFileLabel {
+    position: absolute;
+    width: 75px;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    color: #214590;
+    font-size: 15px;
+    line-height: 15px;
+    text-align: center;
+}
+
+.PopSaveFileLabel1 {
+    margin: -40px 0px 0px -200px;
+}
+
+.PopSaveFileLabel2 {
+    margin: -40px 0px 0px 125px;
+}
+
+.PopConfirm,
+.PopCancel {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    left: 50%;
+    top:80%;
+    margin: 5px 0 10px 0;
+    border-radius: 3px;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    cursor: default;
+}
+
+.PopConfirm:hover {
+    background-color: #00CC00;
+}
+
+.PopCancel:hover {
+    background-color: #FF0000;
+}
+
+.PopConfirm {
+    margin-left: 0px;
+    background-color: #006400;
+}
+
+.PopCancel {
+    margin-left: 96px;
+    background-color: #8B0000;
+}
+
+.TipRoot {
+    position: fixed;
+    width: 400px;
+    height: 50px; 
+    left: 50%;
+    top: 50%;
+    margin: 250px 0px 0px -200px;
+    background-color: RGBA(255,255, 255, 0.9);
+    border-radius: 5px;
+    box-shadow: 0px 0px 7px #000000;
+    line-height: 50px;
+    font-size: 20px;
+    color: #FF0114; 
+    text-align: center; 
+    cursor: default;
+    z-index: 9999;
+    opacity: 0;
+    display: none;
+}
+
+.InterfaceLine11,
+.InterfaceLine12 {
+    position: absolute;
+    background-color: #FF0000;
+    cursor: crosshair;
+}
+
+.InterfaceLine11 {
+    width: 2px;
+    height: 4px;
+}
+
+.InterfaceLine12 {
+    width: 4px;
+    height: 2px;
+}
+
+.IPreConnect {
+    background-color: #FFFFFF;
+}
+
+.IConnected {
+    background-color: #00FF00;
+    cursor: default;
+    pointer-events: none;
+}
+
+.InterfaceLine12ForSodaTankI1 {
+    left: 25px;
+    top: 7px;
+}
+
+.InterfaceLine12ForSodaTankI2 {
+    left: 22px;
+    top: 65px;
+}
+
+.InterfaceLine12ForGaugeTankI1 {
+    left: 24px;
+    top: 7px;
+}
+
+.InterfaceLine12ForGaugeTankI2 {
+    left: 21px;
+    top: 65px;
+}
+
+.InterfaceLine12ForAcidTankI1 {
+    left: 24px;
+    top: 7px;
+}
+
+.InterfaceLine12ForAcidTankI2 {
+    left: 21px;
+    top: 65px;
+}
+
+.InterfaceLine12ForSodaStoTankI1 {
+    left: 47px;
+    top: 9px;
+}
+
+.InterfaceLine12ForSodaStoTankI2 {
+    left: 43px;
+    top: 102px;
+}
+
+.InterfaceLine12ForWaterStoTankI1 {
+    left: 47px;
+    top: 9px;
+}
+
+.InterfaceLine12ForWaterStoTankI2 {
+    left: 43px;
+    top: 102px;
+}
+
+.InterfaceLine12ForDanTiI1 {
+    left: 45px;
+    top: 11px;
+}
+
+.InterfaceLine12ForDanTiI2 {
+    left: 42px;
+    top: 100px;
+}
+
+.InterfaceLine12ForAcidStoTankI1 {
+    left: 46px;
+    top: 10px;
+}
+
+.InterfaceLine12ForAcidStoTankI2 {
+    left: 42px;
+    top: 100px;
+}
+
+.InterfaceLine12ForJarI1 {
+    left: 45px;
+    top: 6px;
+}
+
+.InterfaceLine12ForJarI2 {
+    left: 42px;
+    top: 104px;
+}
+
+.InterfaceLine12ForReactorI1 {
+    left: 22px;
+    top: 8px;
+}
+
+.InterfaceLine12ForReactorI2 {
+    left: 30px;
+    top: 8px;
+}
+
+.InterfaceLine12ForReactorI3 {
+    left: 60px;
+    top: 8px;
+}
+
+.InterfaceLine11ForReactorI4 {
+    left: 22px;
+    top: 88px;
+}
+
+.InterfaceLine11ForReactorI5 {
+    left: 79px;
+    top: 81px;
+}
+
+.InterfaceLine12ForFuPeiTankI1 {
+    left: 22px;
+    top: 8px;
+}
+
+.InterfaceLine12ForFuPeiTankI2 {
+    left: 30px;
+    top: 8px;
+}
+
+.InterfaceLine12ForFuPeiTankI3 {
+    left: 60px;
+    top: 8px;
+}
+
+.InterfaceLine11ForFuPeiTankI4 {
+    left: 22px;
+    top: 88px;
+}
+
+.InterfaceLine11ForFuPeiTankI5 {
+    left: 79px;
+    top: 81px;
+}
+
+.InterfaceLine12ForMixTankI1 {
+    left: 22px;
+    top: 8px;
+}
+
+.InterfaceLine12ForMixTankI2 {
+    left: 30px;
+    top: 8px;
+}
+
+.InterfaceLine12ForMixTankI3 {
+    left: 60px;
+    top: 8px;
+}
+
+.InterfaceLine11ForMixTankI4 {
+    left: 22px;
+    top: 88px;
+}
+
+.InterfaceLine11ForMixTankI5 {
+    left: 79px;
+    top: 81px;
+}
+
+.InterfaceLine11ForHandValve2I1 {
+    left: 8px;
+    top: 12px;
+}
+
+.InterfaceLine11ForHandValve2I2 {
+    left: 21px;
+    top: 12px;
+}
+
+.InterfaceLine12ForHandValve1I1 {
+    left: 9px;
+    top: 8px;
+}
+
+.InterfaceLine12ForHandValve1I2 {
+    left: 9px;
+    top: 21px;
+}
+
+.InterfaceLine11ForDropValveI1 {
+    left: 10px;
+    top: 34px;
+}
+
+.InterfaceLine11ForDropValveI2 {
+    left: 23px;
+    top: 34px;
+}
+
+.InterfaceLine11ForSwitchValveI1 {
+    left: 13px;
+    top: 30px;
+}
+
+.InterfaceLine11ForSwitchValveI2 {
+    left: 22px;
+    top: 30px;
+}
+
+.InterfaceLine11ForConvert11I1 {
+    left: 0px;
+    top: 0px;
+}
+
+.InterfaceLine11ForConvert11I2 {
+    left: 15px;
+    top: 0px;
+}
+
+.InterfaceLine12ForConvert11I3 {
+    left: 6px;
+    top: 9px;
+}
+
+.InterfaceLine12ForConvert12I1 {
+    left: 7px;
+    top: 0px;
+}
+
+.InterfaceLine12ForConvert12I2 {
+    left: 7px;
+    top: 15px;
+}
+
+.InterfaceLine11ForConvert12I3 {
+    left: 0px;
+    top: 6px;
+}
+
+.InterfaceLine11ForConvert13I1 {
+    left: 15px;
+    top: 7px;
+}
+
+.InterfaceLine11ForConvert13I2 {
+    left: 0px;
+    top: 7px;
+}
+
+.InterfaceLine12ForConvert13I3 {
+    left: 6px;
+    top: 0px;
+}
+
+.InterfaceLine12ForConvert14I1 {
+    left: 0px;
+    top: 15px;
+}
+
+.InterfaceLine12ForConvert14I2 {
+    left: 0px;
+    top: 0px;
+}
+
+.InterfaceLine11ForConvert14I3 {
+    left: 9px;
+    top: 6px;
+}
+
+.InterfaceLine12ForConvert21I1 {
+    left: 1px;
+    top: 9px;
+}
+
+.InterfaceLine11ForConvert21I2 {
+    left: 9px;
+    top: 1px;
+}
+
+.InterfaceLine11ForConvert22I1 {
+    left: 0px;
+    top: 1px;
+}
+
+.InterfaceLine12ForConvert22I2 {
+    left: 6px;
+    top: 9px;
+}
+
+.InterfaceLine12ForConvert23I1 {
+    left: 6px;
+    top: 0px;
+}
+
+.InterfaceLine11ForConvert23I2 {
+    left: 0px;
+    top: 6px;
+}
+
+.InterfaceLine11ForConvert24I1 {
+    left: 9px;
+    top: 6px;
+}
+
+.InterfaceLine12ForConvert24I2 {
+    left: 1px;
+    top: 0px;
+}
+
+.InterfaceLine11ForLine11I1 {
+    left: 0px;
+    top: 0px;
+}
+
+.InterfaceLine11ForLine11I2 {
+    right: 0px;
+    top: 0px;
+}
+
+.InterfaceLine12ForLine12I1 {
+    left: 0px;
+    top: 0px;
+}
+
+.InterfaceLine12ForLine12I2 {
+    left: 0px;
+    bottom: 0px;
+}
+
+.InterfaceLine11ForPumpI1 {
+    left: 0px;
+    top: 30px;
+}
+
+.InterfaceLine11ForPumpI2 {
+    left: 52px;
+    top: 30px;
+}
+
+.NewAssetNotPutting {
+    background-color: RGBA(255, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.CRect {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    left: 0px;
+    top: 0px;
+    border: 1px solid #00FF00;
+    display: none;
+}
+
+.Wire {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    display: none;
+}
+
+.Point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    margin: -5px 0px 0px -5px;
+    display: none;
+}
+
+.ProgressBar {
+    position: absolute;
+    width: 1040px;
+    height: 7px;
+    left: 50%;
+    bottom: 45px;
+    margin-left: -520px;
+    background-color: RGBA(255, 255, 255, 0.3);
+    border-radius: 3px;
+    cursor: pointer;
+    display: none;
+}
+
+.SimCtrlPanel {
+    position: absolute;
+    width: 160px;
+    height: 30px;
+    left: 15px;
+    bottom: 10px;
+    display: none;
+}
+
+.SimCtrlButton {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    top: 0px;
+    display: none;
+}
+
+.PlayPause {
+    left: 0px;
+}
+
+.Backward {
+    left: 40px;
+}
+
+.Forward {
+    left: 80px;
+}
+
+.Replay {
+    left: 120px;
+}
+
+.SimCtrlPanelImg {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    top: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    opacity: 0.6;
+}
+
+.SimCtrlPanelImg:hover {
+    width: 30px;
+    height: 30px;
+    margin-left: -15px;
+    margin-top: -15px;
+    opacity: 1.0;
+}
+
+.LoadingContainer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 1.0;
+    z-index: 10000;
+}
+
+.LoadingLogo {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 50%;
+    top: 50%;
+    margin: -50px 0px 0px -150px;
+    font-size: 36px;
+    line-height: 50px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.LoadingText {
+    position: absolute;
+    width: 120px;
+    height: 50px;
+    left: 50%;
+    top: 50%;
+    margin: 0px 0px 0px -60px;
+    font-size: 36px;
+    line-height: 50px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.Alertpart {
+    position: absolute;
+    margin: 0px;
+    z-index: 100;
+    width: 95%;
+    display: none;
+}
+.Teminput {
+    background-color: #fff;
+    border: 1px solid #ccc;
+     height: 34px;
+     padding: 6px 12px;
+     font-size: 14px;
+     line-height: 1.42857143;
+  color: #555;
+     border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+}
